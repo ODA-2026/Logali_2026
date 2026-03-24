@@ -1,0 +1,4 @@
+@EndUserText.label: 'Example Service Definition'
+define service ZSD_CUSTOM_DETAIL_ODA2026 {
+  expose ZCDS_CUSTOM_DETAIL_ODA2026;
+}
