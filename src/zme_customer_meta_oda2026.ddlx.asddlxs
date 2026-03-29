@@ -1,0 +1,13 @@
+@Metadata.layer: #CORE
+annotate entity ZCDS_CUSTOMER_META_ODA2026 with
+{
+  @UI.dataFieldDefault: [{ importance: #MEDIUM }]
+  @UI.lineItem: [{ position: 10,
+                   type: #FOR_ACTION, dataAction: 'get_customer' }]
+  CustomerId;
+
+  @UI.dataFieldDefault: [{ importance: #MEDIUM }]
+  @UI.lineItem: [{position: 20 }]
+  City;
+
+}

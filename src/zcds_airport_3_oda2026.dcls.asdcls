@@ -1,0 +1,8 @@
+@EndUserText.label: 'Example Access Control Inheritance'
+@MappingRole: true
+define role ZCDS_AIRPORT_3_ODA2026 {
+    grant select on ZCDS_AIRPORT_3_ODA2026
+          where inheriting conditions from entity ZCDS_AIRPORT_1_ODA2026 or
+                AirportId = 'MUC' or
+                AirportId = 'MAD'; 
+}
