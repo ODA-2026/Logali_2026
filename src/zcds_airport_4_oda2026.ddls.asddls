@@ -1,5 +1,5 @@
 @AbapCatalog.viewEnhancementCategory: [#NONE]
-@AccessControl.authorizationCheck: #NOT_REQUIRED
+@AccessControl.authorizationCheck: #CHECK
 @EndUserText.label: 'Example Access Control Aspect_PFCG'
 @Metadata.ignorePropagatedAnnotations: true
 define view entity zcds_airport_4_ODA2026
@@ -9,5 +9,6 @@ define view entity zcds_airport_4_ODA2026
       name       as Name,
       city       as City,
       country    as Country,
-      cast( '01' as abap.char(2) )       as FlightType
+      cast( '01' as zde_flight_type_oda2026 ) as FlighType
 }
+ 
