@@ -12,16 +12,39 @@ CLASS zcl_lab_01_ejec_oda2026 IMPLEMENTATION.
 
   METHOD if_oo_adt_classrun~main.
 
-  DATA: go_file_1 type ref to zif_lab_06_file_oda2026,
-        go_file_2 type ref to zif_lab_06_file_oda2026,
-        go_factory type ref to zcl_lab_65_factory_oda2026.
+  data(go_blog) = new zcl_lab_69_blog_oda2026(  ).
+  data(go_admin) = new zcl_lab_71_admin_oda2026(  ).
+  data(go_user) = new zcl_lab_72_users_oda2026(  ).
 
-        go_factory = new #(  ).
-        go_file_1 = go_factory->create_file( 'Work File' ).
-        go_file_2 = go_factory->create_file( 'Supply File' ).
+  set handler go_admin->on_new_articulo for go_blog.
+  set handler go_user->on_new_articulo_for_users for go_admin.
 
-        out->write( go_file_1->get_file_type(  ) ).
-        out->write( go_file_2->get_file_type(  ) ).
+  go_blog->set_articulo( 'Artículo Biología Molecular' ).
+
+  out->write( go_blog->get_articulo(  ) ).
+  out->write( go_admin->nuevo_articulo ).
+  out->write( go_user->nuevo_articulo ).
+
+
+*  data(go_viaje_p1) = new zcl_lab_67_pack_a_oda2026(  ).
+*  go_viaje_p1->travel( exporting io_consola = out ).
+*
+*  out->write( cl_abap_char_utilities=>newline ).
+*
+*  data(go_viaje_p2) = new zcl_lab_68_pack_b_oda2026(  ).
+*  go_viaje_p2->travel( exporting io_consola = out ).
+
+
+*  DATA: go_file_1 type ref to zif_lab_06_file_oda2026,
+*        go_file_2 type ref to zif_lab_06_file_oda2026,
+*        go_factory type ref to zcl_lab_65_factory_oda2026.
+*
+*        go_factory = new #(  ).
+*        go_file_1 = go_factory->create_file( 'Work File' ).
+*        go_file_2 = go_factory->create_file( 'Supply File' ).
+*
+*        out->write( go_file_1->get_file_type(  ) ).
+*        out->write( go_file_2->get_file_type(  ) ).
 
 *    DATA(lo_singleton_1) = zcl_lab_62_context_oda2026=>get_instance_singl(  ).
 *    DATA(lo_singleton_2) = zcl_lab_62_context_oda2026=>get_instance_singl(  ).
