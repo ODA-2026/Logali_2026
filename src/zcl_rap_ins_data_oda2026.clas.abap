@@ -28,7 +28,7 @@ CLASS zcl_rap_ins_data_oda2026 IMPLEMENTATION.
                           ).
 
     IF sy-subrc EQ 0.
-      out->write( |{ sy-dbcnt }| ).
+      out->write( |New records: { sy-dbcnt }| ).
     ENDIF.
 
   ENDMETHOD.

@@ -1,0 +1,39 @@
+@Metadata.layer: #INDUSTRY
+
+@UI: {headerInfo: { typeName: 'Customer',
+                    typeNamePlural: 'Customers',
+                    title: { type: #STANDARD,
+                             value: 'CustomerId' } },
+      presentationVariant: [{ sortOrder: [{by: 'CustomerId',
+                                           direction: #ASC}],
+                              visualizations: [{ type: #AS_LINEITEM }]}]
+     }
+
+annotate entity Z_C_CUSTOM_TRAVEL_ODA2026 with
+{
+  @UI.lineItem: [{ position: 10,
+                   importance: #HIGH,
+                   label: 'Customer ID' }]
+  CustomerId;
+
+  @UI.lineItem: [{ position: 20,
+               importance: #HIGH,
+               label: 'Apellido' }]
+  LastName;
+
+  @UI.lineItem: [{ position: 30,
+               importance: #HIGH,
+               label: 'Nombre' }]
+  FirstName;
+
+  @UI.lineItem: [{ position: 40,
+               importance: #HIGH,
+               label: 'Customer ID' }]
+  CountryName;
+
+  @UI.lineItem: [{ position: 50,
+               importance: #HIGH,
+               label: 'Customer ID' }]
+  Description;
+
+}

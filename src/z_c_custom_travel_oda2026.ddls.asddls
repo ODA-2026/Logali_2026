@@ -2,6 +2,7 @@
 @EndUserText.label: 'Example RAP - Business Object'
 @Metadata.ignorePropagatedAnnotations: true
 @Search.searchable: true
+@Metadata.allowExtensions: true
 define root view entity Z_C_CUSTOM_TRAVEL_ODA2026
 provider contract transactional_query
   as projection on Z_R_CUSTOM_TRAVEL_ODA2026
@@ -12,7 +13,7 @@ provider contract transactional_query
       @Search.fuzzinessThreshold: 0.8
       @Search.ranking: #HIGH
       @ObjectModel.text.element: [ 'LastName', 'FirstName' ]
-  key CustomerId,
+      CustomerId,
       _Customer.LastName    as LastName,
       _Customer.FirstName   as FirstName,
 

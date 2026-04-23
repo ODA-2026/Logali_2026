@@ -6,7 +6,7 @@ define root view entity Z_R_CUSTOM_TRAVEL_ODA2026
   association [0..1] to /DMO/I_Customer as _Customer on _Customer.CustomerID = $projection.CustomerId
 {
   key customer_uuid         as CustomerUuid,
-  key customer_id           as CustomerId,
+      customer_id           as CustomerId,
       description           as Description,
       @Semantics.user.createdBy: true
       local_created_by      as LocalCreatedBy,
