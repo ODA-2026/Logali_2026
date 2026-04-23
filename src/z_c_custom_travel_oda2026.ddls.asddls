@@ -3,22 +3,24 @@
 @Metadata.ignorePropagatedAnnotations: true
 @Search.searchable: true
 define root view entity Z_C_CUSTOM_TRAVEL_ODA2026
+provider contract transactional_query
   as projection on Z_R_CUSTOM_TRAVEL_ODA2026
-
 {
   key CustomerUuid,
       @Search.defaultSearchElement: true
       @Search.fuzzinessThreshold: 0.8
       @Search.ranking: #HIGH
 
-      @ObjectModel.text.element: [ 'LastName', 'FirstName'  ]
+      @ObjectModel.text.element: [ 'LastName', 'FirstName' ]
   key CustomerId,
       _Customer.LastName    as LastName,
       _Customer.FirstName   as FirstName,
 
       Description,
 
-      _Customer.CountryCode as CountryName,
+      @Semantics.address.country: true
+      _Customer.CountryCode,
+      _Customer._Country._Text.CountryName as CountryName: localized,
 
       //local ETag
       @Semantics.systemDateTime.localInstanceLastChangedAt: true
