@@ -7,10 +7,10 @@ provider contract transactional_query
   as projection on Z_R_CUSTOM_TRAVEL_ODA2026
 {
   key CustomerUuid,
+  
       @Search.defaultSearchElement: true
       @Search.fuzzinessThreshold: 0.8
       @Search.ranking: #HIGH
-
       @ObjectModel.text.element: [ 'LastName', 'FirstName' ]
   key CustomerId,
       _Customer.LastName    as LastName,
@@ -20,7 +20,7 @@ provider contract transactional_query
 
       @Semantics.address.country: true
       _Customer.CountryCode,
-      _Customer._Country._Text.CountryName as CountryName: localized,
+      _Customer._Country._Text[1: Language = $session.system_language ].CountryName as CountryName,
 
       //local ETag
       @Semantics.systemDateTime.localInstanceLastChangedAt: true
