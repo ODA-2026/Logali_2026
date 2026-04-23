@@ -20,7 +20,6 @@ provider contract transactional_query
       Description,
 
       @Semantics.address.country: true
-      _Customer.CountryCode,
       _Customer._Country._Text[1: Language = $session.system_language ].CountryName as CountryName,
 
       //local ETag
