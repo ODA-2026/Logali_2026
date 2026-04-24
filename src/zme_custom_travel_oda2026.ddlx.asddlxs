@@ -68,6 +68,7 @@ annotate entity Z_C_CUSTOM_TRAVEL_ODA2026 with
                importance: #HIGH,
                label: 'Description' }],
          identification: [{ position: 50 }] }
+  @UI.hidden: true       
   Description;
 
 }

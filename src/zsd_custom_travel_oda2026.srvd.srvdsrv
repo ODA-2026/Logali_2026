@@ -1,0 +1,4 @@
+@EndUserText.label: 'Example RAP - Service Definition'
+define service ZSD_CUSTOM_TRAVEL_ODA2026 {
+  expose Z_C_CUSTOM_TRAVEL_ODA2026 as CustomerTravel;
+}
