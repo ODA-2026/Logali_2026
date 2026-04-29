@@ -1,0 +1,14 @@
+{
+  "formatVersion": "1",
+  "header": {
+    "description": "Example - Scalar Function",
+    "originalLanguage": "en",
+    "abapLanguageVersion": "cloudDevelopment"
+  },
+  "scalarFunctionName": "ZSF_CALC_DISCOUNT_ODA2026",
+  "engine": "sqlEngine",
+  "sqlProperties": {
+    "amdpReference": "ZCL_CALC_DISCOUNT_ODA2026=>get_discount",
+    "autoExposedInSqlServices": false
+  }
+}

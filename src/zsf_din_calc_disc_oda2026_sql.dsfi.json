@@ -1,0 +1,14 @@
+{
+  "formatVersion": "1",
+  "header": {
+    "description": "Example - SF Cond. Tipo Ref.",
+    "originalLanguage": "en",
+    "abapLanguageVersion": "cloudDevelopment"
+  },
+  "scalarFunctionName": "ZSF_DIN_CALC_DISC_ODA2026",
+  "engine": "sqlEngine",
+  "sqlProperties": {
+    "amdpReference": "ZCL_CALC_DISCOUNT_ODA2026=>get_real_price",
+    "autoExposedInSqlServices": false
+  }
+}
