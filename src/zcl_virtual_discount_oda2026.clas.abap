@@ -14,11 +14,11 @@ CLASS zcl_virtual_discount_oda2026 IMPLEMENTATION.
 
     IF iv_entity EQ 'ZCDS_VIRTUAL_DISCOUNT_ODA2026'.
 
-      LOOP AT it_requested_calc_elements ASSIGNING FIELD-SYMBOL(<fs_element>).
-        IF <fs_element> EQ 'REALPRICE'.
-          APPEND 'FLIGHTPRICE' TO et_requested_orig_elements.
-        ENDIF.
-      ENDLOOP.
+*      LOOP AT it_requested_calc_elements ASSIGNING FIELD-SYMBOL(<fs_element>).
+*        IF <fs_element> EQ 'REALPRICE'.
+*          APPEND 'REALPRICE' TO et_requested_orig_elements.
+*        ENDIF.
+*      ENDLOOP.
 
     ENDIF.
 
