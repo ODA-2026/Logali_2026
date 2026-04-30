@@ -1,0 +1,4 @@
+@EndUserText.label: 'Example - Virtualization'
+define service ZSD_FLIGHT_DISCOUNT_ODA2026 {
+  expose ZCDS_PROJ_VIRTUAL_DISC_ODA2026 as FlightDiscounts;
+}
