@@ -1,0 +1,18 @@
+@EndUserText.label: 'Example - Enum Type'
+define type ZTY_ENUM_ST_ORDER_ODA2026 : abap.char(2) enum
+{
+  @EndUserText.label: 'Draft'
+  DRAFT      = initial;
+  
+  @EndUserText.label: 'Processing'
+  PROCESSING = '01';
+  
+  @EndUserText.label: 'Shipped'
+  SHIPPED    = '02';
+  
+  @EndUserText.label: 'Delivered'
+  DELIVERED  = '03';
+  
+  @EndUserText.label: 'Cancelled'
+  CANCELLED  = '04';
+}

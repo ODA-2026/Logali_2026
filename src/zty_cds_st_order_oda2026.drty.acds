@@ -1,0 +1,2 @@
+@EndUserText.label: 'Example - CDS Type'
+define type ZTY_CDS_ST_ORDER_ODA2026: abap.char( 10 )
