@@ -12,19 +12,40 @@ CLASS zcl_lab_01_ejec_oda2026 IMPLEMENTATION.
 
   METHOD if_oo_adt_classrun~main.
 
-  data(go_model) =  new zcl_lab_73_model_oda2026( iv_carrier_id = 'AA' ).
+    DATA: lv_num TYPE i VALUE 20,
+          lv_coe TYPE i VALUE 0,
+          lv_res TYPE i.
 
-  data(go_view) = new zcl_lab_74_view_oda2026(  ).
+    TRY.
+        lv_res = lv_num / lv_coe.
 
-  data(go_controller) = new zcl_lab_75_controller_oda2026(  ).
+      CATCH cx_sy_zerodivide INTO DATA(lcx_excepcion).
+        lv_coe = 1.
+        RETRY.
+    ENDTRY.
 
-  go_controller->set_model( go_model ).
-  go_controller->set_view( go_view ).
+    out->write( |Resultado: { lv_res }| ).
 
-  go_controller->get_view(  )->display_flights( exporting it_flights = go_controller->get_model( )->get_flights(  )
-                                                          io_out = out ).
+*    DATA(lo_process_check) = NEW zcl_lab_53_check_oda2026(  ).
+*
+*    TRY.
+*        lo_process_check->check_user( iv_user = sy-uname ).
+*      CATCH zcx_lab_52_operations_oda2026 into data(lcx_exception).
+*        "handle exception
+*        out->write( lcx_exception->get_text( ) ).
+*    ENDTRY.
 
-
+*  data(go_model) =  new zcl_lab_73_model_oda2026( iv_carrier_id = 'AA' ).
+*
+*  data(go_view) = new zcl_lab_74_view_oda2026(  ).
+*
+*  data(go_controller) = new zcl_lab_75_controller_oda2026(  ).
+*
+*  go_controller->set_model( go_model ).
+*  go_controller->set_view( go_view ).
+*
+*  go_controller->get_view(  )->display_flights( exporting it_flights = go_controller->get_model( )->get_flights(  )
+*                                                          io_out = out ).
 
 *  data(go_blog) = new zcl_lab_69_blog_oda2026(  ).
 *  data(go_admin) = new zcl_lab_71_admin_oda2026(  ).
