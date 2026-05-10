@@ -12,10 +12,9 @@ provider contract transactional_query
       @Search.defaultSearchElement: true
       @Search.fuzzinessThreshold: 0.8
       @Search.ranking: #HIGH
-      @ObjectModel.text.element: [ 'LastName', 'FirstName' ]
+      @ObjectModel.text.element: [ 'CustomerName' ]
       CustomerId,
-      _Customer.LastName    as LastName,
-      _Customer.FirstName   as FirstName,
+      _Customer.LastName    as CustomerName,
 
       Description,
 
